@@ -8,7 +8,7 @@ export default function CourseItem({type, subtitle, title, typeName, dateStart, 
           <Link href=""><a className="card-subtitle">{subtitle}</a></Link>
           <Link href=""><a className="card-title">{title}</a></Link>
           <div className='w-100'>
-            <span class="card-badge mt-2 mb-2">{typeName}</span>
+            <span className="card-badge mt-2 mb-2">{typeName}</span>
           </div>
           <p>{dateStart}</p>
           <Row className="align-items-center">

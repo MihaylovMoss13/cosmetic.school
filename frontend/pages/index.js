@@ -173,11 +173,11 @@ export default function Home() {
               <div className="col-md-4 col-sm-6 col-12">
                 <div className="card bg-dark text-white">
                   <CardImg src="https://www.suzan.ru/media/widgetkit/apparatnaya-kosmetologiya-5550410aacc0fbf3092e1531e956e72a.jpg"
-                        class="card-img"
+                        className="card-img"
                         alt=""
                   />
-                  <div class="card-img-overlay d-flex align-items-end">
-                    <h5 class="card-title text-uppercase">мастер-классы</h5>
+                  <div className="card-img-overlay d-flex align-items-end">
+                    <h5 className="card-title text-uppercase">мастер-классы</h5>
                   </div>
                 </div>
               </div>
