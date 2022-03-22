@@ -1,0 +1,136 @@
+
+body .card {
+    $card: &;
+    
+    transition: .8s ease all;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+    border: 0 solid;
+    margin: 0 calc(var(--bs-gutter-x) * .5) 30px;
+
+    &:hover {
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    &-type--offline {
+        .card-title {
+            color: #4340B4;
+        }
+        .card-badge {
+            background: #4340B4;
+            padding: 9px 9px 11px 8px;
+        }
+        .card-button-registr {
+            background: #4340B4;
+        }
+        .card-button-enter {
+            background: rgba(83, 81, 196, 0.1);
+            color: #4340B4;
+        }
+    }
+    &-type--master-class {
+        .card-title {
+            color: #1D8195;
+        }
+        .card-badge {
+            background: #00A896;
+            padding: 9px 9px 11px 8px;
+        }
+        .card-button-registr {
+            background: #00A896;
+        }
+        .card-button-enter {
+            background: rgba(0, 168, 150, 0.1);
+            color: #00A896;
+         }
+    }
+
+    &-body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &-subtitle {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 0;
+        margin-bottom: 14px;
+        color: #424242;
+        opacity: 0.8;
+    }
+    
+    &-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 100%;
+        letter-spacing: -0.4px;
+    }
+
+    @media (max-width: 760px) {
+        &-title {
+            height: 80px;
+            font-size: 26px;
+        }
+    }
+    
+    &-badge {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 5px;
+        color: #FFFFFF;
+        opacity: 0.8;
+        padding: 0px 13px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9px;
+    }
+    
+    &-button {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        padding: 16px 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &-registr {
+            color: #FFFFFF;
+        }
+        
+        &-enter {
+            border-radius: 0 0 0.25rem 0.25rem;
+        }
+    }
+}
+
+.section--training-cosmetologs {
+    .card {
+        height: 260px;
+        overflow: hidden;
+
+        &:hover {
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        img {
+            position: relative;
+            height: auto;
+            width: 100%;
+        }
+
+        &-img-overlay {
+            padding: 32px 0 30px 28px;
+            ul {
+                padding-left: 28px;
+            }
+        }
+    }
+}
