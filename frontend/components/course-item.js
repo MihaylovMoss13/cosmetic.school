@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Col, Card, CardImg, CardBody, Row } from "reactstrap"
   
 export default function CourseItem({type, subtitle, title, typeName, dateStart, summ, time, img, countUser, linkReg, linkEnter}) {
@@ -22,6 +23,7 @@ export default function CourseItem({type, subtitle, title, typeName, dateStart, 
                 src={img}
                 top
                 width="100%"
+                placeholder="blur"
               />
             </Col>
           </Row>

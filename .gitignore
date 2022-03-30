@@ -1,0 +1,88 @@
+# RestAPI
+/api/node_modules
+/api/public/hot
+/api/public/storage
+/api/storage/*.key
+/api/vendor
+/api/.env
+/api/.env.backup
+/api/.phpunit.result.cache
+/api/Homestead.json
+/api/Homestead.yaml
+/api/npm-debug.log
+/api/yarn-error.log
+/api/.idea
+/api/.vscode
+
+# Backend NextJs
+
+# dependencies
+/backend/node_modules
+/backend/.pnp
+/backend/.pnp.js
+
+# testing
+/backend/coverage
+
+# next.js
+/backend/.next/
+/backend/out/
+
+# production
+/backend/build
+
+# misc
+/backend/.DS_Store
+/backend/*.pem
+
+# debug
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+# local env files
+/backend/.env.local
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+
+# vercel
+/backend/.vercel
+
+# Frontend NextJs
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# testing
+/frontend/coverage
+
+# next.js
+/frontend/.next/
+/frontend/out/
+
+# production
+/frontend/build
+
+# misc
+/frontend/.DS_Store
+/frontend/*.pem
+
+# package-lock.json
+/frontend/package-lock.json
+
+# debug
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/.pnpm-debug.log*
+
+# local env files
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+# vercel
+/frontend/.vercel

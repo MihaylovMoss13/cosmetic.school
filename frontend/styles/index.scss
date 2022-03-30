@@ -111,25 +111,99 @@ body .card {
     }
 }
 
-.section--training-cosmetologs {
-    .card {
-        height: 260px;
-        overflow: hidden;
+.section {
+    &--training-cosmetologs {
+        .card {
+            height: 260px;
+            overflow: hidden;
 
-        &:hover {
-            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+            &:hover {
+                box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            img {
+                position: relative;
+                height: auto;
+                width: 100%;
+            }
+
+            &-img-overlay {
+                padding: 32px 0 30px 28px;
+                ul {
+                    padding-left: 28px;
+                }
+            }
+        }
+    }
+
+    &--why-we {
+        padding: 3rem 0 6rem;
+
+        h2 {
+            margin: 3rem 0 4rem;
         }
 
-        img {
-            position: relative;
-            height: auto;
-            width: 100%;
-        }
+        .card-item {
+            &:nth-child(1) {
+                .card-item--block-big-numbers {
+                    color: rgba(85, 166, 48, 0.25);
+                }
+            }
 
-        &-img-overlay {
-            padding: 32px 0 30px 28px;
-            ul {
-                padding-left: 28px;
+            &:nth-child(2) {
+                .card-item--block {
+                    background: #B7ECB1;
+
+                    &-big-numbers {
+                        color: rgba(255, 255, 255, 0.7);
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .card-item--block {
+                    &-big-numbers {
+                        color: rgba(85, 166, 48, 0.25);
+                    }
+                }
+            }
+            
+            &--block {
+                height: 100%;
+                margin: 0 10px;
+                position: relative;
+                border-radius: 8px;
+                transition: .8s ease all;
+                background: #FFFFFF;
+                &:hover {
+                    box-shadow: 0px 3px 20px rgba(66, 66, 66, 0.15);
+                }
+                
+                &-big-numbers {
+                    position: absolute;
+                    font-style: normal;
+                    text-shadow: 0 5px 14px rgba(0, 0, 0, .09);
+                    align-items: flex-end;
+                    font-weight: 500;
+                    font-size: 180px;
+                    line-height: 36px;
+                    display: flex;
+                    justify-content: end;
+                    height: 320px;
+                    width: 380px;
+                    bottom: 50px;
+                    right: -10px;
+                }
+                
+                &-img-overlay {
+                    background: transparent;
+                    color: #000000;
+                    padding: 60px 20px;
+                    .card-title {
+                        font-size: 26px;
+                        margin-bottom: 30px;
+                    }
+                }
             }
         }
     }

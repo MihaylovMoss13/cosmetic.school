@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CourseItem from '../components/course-item'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import {
   Nav,
   NavItem,
@@ -29,11 +33,25 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from 'reactstrap';
+} from 'reactstrap'
 
 import styles from '../styles/Home.module.css'
 
 export default function Courses() {
+  
+  const [courses, setCources] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://localhost/api/courses');
+      const data = await response.json();
+      setCources(data);
+      courses(data);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <Navbar
@@ -145,6 +163,22 @@ export default function Courses() {
               </a>
             </Link>
           </Col>
+          {courses && courses.map(({ id, name }) => (
+            <Col>
+              <CourseItem type="card-type--offline"
+                          subtitle="Курс косметологии"
+                          title={name}
+                          typeName="Оффлайн"
+                          dateStart={period_date}
+                          summ="112 500 руб."
+                          time="576 акк. часов"
+                          img="https://www.suzan.ru/media/widgetkit/apparatnaya-kosmetologiya-5550410aacc0fbf3092e1531e956e72a.jpg"
+                          countUser="2 из 15"
+                          linkReg={"/"}
+                          linkEnter={"/"}
+              />
+            </Col>
+          ))}
           <Col>
             <Card>
               <CardBody>
