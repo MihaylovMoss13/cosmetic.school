@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Http\Library\ApiHelpers;
 
-use App\Models\Course;
+use App\Models\TrainingSchedule;
 
-use App\Http\Resources\CourseResource;
+use App\Http\Resources\TrainingScheduleResource;
 use Illuminate\Support\Facades\Storage;
 
-class CourseController extends Controller
+class TrainingScheduleController extends Controller
 {
     use ApiHelpers; // <---- Использование трейта apiHelpers
 
@@ -21,9 +21,15 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return CourseResource::collection(Course::get());
+        $user = $request->user();
+        if ($this->isAdmin($user)) {
+            return TrainingScheduleResource::collection(TrainingSchedule::with('courses')->orderBy('id', 'desc')->get());
+        } else {
+            return TrainingScheduleResource::collection(TrainingSchedule::with('courses')->get()->orderBy('id', 'desc')->where('user_id', $user->id));
+        }
+        return $this->onError(401, 'У вас не достаточно прав для просмотра графика обучения');
     }
 
     /**
@@ -38,21 +44,9 @@ class CourseController extends Controller
             $validator = Validator::make(
                 $request->all(),
                 [
-                    'title'                     => ['required'],
-                    'course_description'        => ['required'],
-                    'course_duration'           => ['required'],
-                    'course_price'              => ['required'],
-                    'course_old_price'          => ['required'],
-                    'course_credit_info'        => ['required'],
-                    'course_medicine_info'      => ['required'],
-                    'course_thumb'              => ['required'],
-                    'course_video'              => ['required'],
-                    'advantages'                => ['required'],
-                    'course_program'            => ['required'],
-                    'course_program_pdf'        => ['required'],
-                    'course_contract_url'       => ['required'],
-                    'limit_users'               => ['required'],
-                    'course_type'               => ['required']
+                    'training_date'    => ['required'],
+                    'training_weekday' => ['required'],
+                    'course_id'        => ['required']
                 ]
             );
 
@@ -62,37 +56,11 @@ class CourseController extends Controller
                     'message' => $validator->messages(),
                 ], 422);
             }
-            
-            if ($request->hasFile('course_thumb')) {
-                $courseThumbName = $request->file('course_thumb') . '.' . $request->file('course_thumb')->guessExtension();
-                $courseThumbPath = $request->file('course_thumb')->storeAs('/course/' . $request->course_name, $courseThumbName);
-                $courseThumb = Storage::url($courseThumbPath);
-            }
 
-            if ($request->hasFile('course_video')) {
-                $courseVideoName = $request->file('course_video') . '.' . $request->file('course_video')->guessExtension();
-                $courseVideoPath = $request->file('course_video')->storeAs('/course/' . $request->course_name, $courseVideoName);
-                $courseVideo = Storage::url($courseVideoPath);
-            }
-
-            $course = Course::create([
-                'title'                     => $request->title,
-                'slug'                      => Str::slug($request->title),
-                'category_id'               => $request->category_id,
-                'course_description'        => $request->course_description,
-                'course_duration'           => $request->course_duration,
-                'course_price'              => $request->course_price,
-                'course_old_price'          => $request->course_old_price,
-                'course_credit_info'        => $request->course_credit_info,
-                'course_medicine_info'      => $request->course_medicine_info,
-                'course_thumb'              => $courseThumb,
-                'course_video'              => $courseVideo,
-                'advantages'                => $request->advantages,
-                'course_program'            => $request->course_program,
-                'course_program_pdf'        => $request->course_program_pdf,
-                'course_contract_url'       => $request->course_contract_url,
-                'limit_users'               => $request->limit_users,
-                'course_type'               => $request->course_type
+            $trainingSchedule = TrainingSchedule::create([
+                'training_date'    => $request->training_date,
+                'training_weekday' => $request->training_weekday,
+                'course_id'        => $request->course_id
             ]);
             
             return $this->onSuccess($course, 'Курс успешно добавлен', 201);
@@ -108,7 +76,13 @@ class CourseController extends Controller
      */
     public function show(Request $request, $id)
     {
-        return new CourseResource(Course::with('training_schedules')->findOrFail($id));
+        $user = $request->user();
+        if ($this->isAdmin($user)) {
+            return new BorrowerResource(Borrower::with('loans')->findOrFail($id));
+        } else {
+            return new BorrowerResource(Borrower::with('loans')->findOrFail($id)->where('user_id', $user->id));
+        }
+        return $this->onError(401, 'У вас нет прав для просмотра клиента');
     }
 
     /**
@@ -170,10 +144,10 @@ class CourseController extends Controller
     public function destroy(Request $request, $id)
     {
         if ($this->isAdmin($request->user())) {
-            Borrower::destroy($id);
+            TrainingSchedule::destroy($id);
 
-            return ["message" => "Клиент удален"];
+            return ["message" => "График обучения удален"];
         }
-        return $this->onError(401, 'У вас нет прав для удаления клиента');
+        return $this->onError(401, 'У вас нет прав для удаления графика обучения');
     }
 }
