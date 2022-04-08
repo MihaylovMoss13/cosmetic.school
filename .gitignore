@@ -1,53 +1,18 @@
 # RestAPI
-/api/node_modules
-/api/public/hot
-/api/public/storage
-/api/storage/*.key
-/api/vendor
-/api/.env
-/api/.env.backup
-/api/.phpunit.result.cache
-/api/Homestead.json
-/api/Homestead.yaml
-/api/npm-debug.log
-/api/yarn-error.log
-/api/.idea
-/api/.vscode
-
-# Backend NextJs
-
-# dependencies
 /backend/node_modules
-/backend/.pnp
-/backend/.pnp.js
-
-# testing
-/backend/coverage
-
-# next.js
-/backend/.next/
-/backend/out/
-
-# production
-/backend/build
-
-# misc
-/backend/.DS_Store
-/backend/*.pem
-
-# debug
-/backend/npm-debug.log*
-/backend/yarn-debug.log*
-/backend/yarn-error.log*
-
-# local env files
-/backend/.env.local
-/backend/.env.development.local
-/backend/.env.test.local
-/backend/.env.production.local
-
-# vercel
-/backend/.vercel
+/backend/public/hot
+/backend/public/storage
+/backend/storage/*.key
+/backend/vendor
+/backend/.env
+/backend/.env.backup
+/backend/.phpunit.result.cache
+/backend/Homestead.json
+/backend/Homestead.yaml
+/backend/npm-debug.log
+/backend/yarn-error.log
+/backend/.idea
+/backend/.vscode
 
 # Frontend NextJs
 # dependencies

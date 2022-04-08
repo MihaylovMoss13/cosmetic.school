@@ -1,47 +1,94 @@
 <template>
-    <div>
-        <div class="bg-white">
-            <main class="shadow">
-                <div class="max-w-screen-lg mx-auto flex flex-row justify-between items-center p-4 sm:p-7 relative z-10 space-x-2 sm:space-x-3">
-                    <NuxtLink to="/" class="block">
-                        <h1 class="text-2xl font-black"><span class="text-purple-700">ergo</span>dnc
-                        </h1>
-                    </NuxtLink>
+  <div
+    class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
+  >
+    <!-- App header -->
+    <AppHeader />
 
-                    <div class="flex items-center text-sm font-semibold">
-                        <template v-if="$auth.user">
-                            <a href="" class="text-gray-700 hover:text-purple-700" @click.prevent="logout">
-                                Log Out
-                            </a>
-                            <NuxtLink to="/profile" class="text-gray-700 ml-7 border border-gray-300 hover:border-purple-400 hover:text-purple-700 rounded px-4 py-2">
-                                Profile
-                            </NuxtLink>
-                        </template>
-                        <template v-else>
-                            <NuxtLink to="/login" class="text-gray-700 hover:text-purple-700">
-                                Sign In
-                            </NuxtLink>
-                            <NuxtLink to="/register" class="text-gray-700 ml-7 border border-gray-300 hover:border-purple-400 hover:text-purple-700 rounded px-4 py-2">
-                                Create Account
-                            </NuxtLink>
-                        </template>
-                    </div>
-                </div>
-            </main>
-        </div>
+    <!-- Render contents with transition -->
+    <transition name="fade" mode="out-in">
+      <Nuxt />
+    </transition>
 
-        <div class="max-w-screen-lg mx-auto p-4 sm:p-7 mt-10">
-            <Nuxt/>
-        </div>
+    <!-- App footer -->
+    <AppFooter />
+
+    <!-- Go back to top when scrolled down -->
+    <div
+      class="
+        flex
+        space-x-2
+        mr-8
+        mb-6
+        right-0
+        bottom-0
+        z-50
+        fixed
+        items-center
+        sm:space-x-4
+      "
+    >
+      <BackToTop />
     </div>
+  </div>
 </template>
 
 <script>
+import feather from "feather-icons";
+import AppHeader from "../components/shared/AppHeader.vue";
+import AppFooter from "../components/shared/AppFooter.vue";
+import BackToTop from "../components/BackToTop.vue";
 export default {
-    methods: {
-        logout() {
-            this.$auth.logout();
-        }
-    }
-}
+  data: () => {
+    return {
+      // Todo
+    };
+  },
+  mounted() {
+    feather.replace();
+  },
+  components: { AppFooter, BackToTop, AppHeader },
+};
 </script>
+
+<style>
+.vue-back-to-top {
+  @apply p-2 sm:p-4 bg-indigo-500 hover:bg-indigo-600 text-white;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.fade-enter-active {
+  animation: coming 0.4s;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.fade-leave-active {
+  animation: going 0.4s;
+}
+
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes coming {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+</style>

@@ -1,69 +1,97 @@
-# nuxtapp
+# Nuxt.js & TailwindCSS Portfolio - With Dark Mode
 
-## Build Setup
+A simple portfolio starter theme built with Nuxt.js and TailwindCSS. This is the Nuxt version of the [Vuejs-&-TailwindCSS-Portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
 
-```bash
-# install dependencies
-$ npm install
+![Nuxtjs-TailwindCSS-Portfolio](https://user-images.githubusercontent.com/16396664/140901794-14c1db27-99b9-46d4-a954-4bb37c32ead4.JPG)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Demo URL
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+[https://nuxtjs-tailwindcss-portfolio.netlify.com](https://nuxtjs-tailwindcss-portfolio.netlify.com)
 
-# generate static project
-$ npm run generate
+## Features
+
+- Simple and responsive design
+- [Nuxt.js](https://nuxtjs.org) with [Vuex](https://vuex.vuejs.org/)
+- [Tailwind CSS v2](https://tailwindcss.com)
+- Theme Switcher with Dark Mode
+- Vuex for state management
+- Reusable components
+- Projects filter by category
+- Projects search by title
+- Vue transitions
+- Counter
+- Projects carousel
+- Smooth scroll
+- Dynamic forms
+- Back to top button
+- Download file button
+
+## Installation
+
+1. ##### First of all, make sure you have Node JS installed. If you don't have it:
+
+- [Download it from nodejs.org](https://nodejs.org)
+- [Install it using NVM ](https://github.com/nvm-sh/nvm)
+- If you're on Mac, Homebrew is a good option too:
+
+```
+brew install node
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+2. ##### Clone the repo:
 
-## Special Directories
+```
+git clone https://github.com/realstoman/nuxtjs-tailwindcss-portfolio.git
+```
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+3. ##### Open the project folder:
 
-### `assets`
+```
+cd nuxtjs-tailwindcss-portfolio
+```
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+4. ##### Install packages and dependencies:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+```
+yarn
+```
 
-### `components`
+4. NOTE: If you don't have yarn installed, you can install it globally using npm:
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+```
+npm install --global yarn
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+5. ##### Start a local dev server at `http://localhost:3000`:
 
-### `layouts`
+```
+yarn dev
+```
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+## For production build and generating static files:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+##### Build for production and launch server:
 
+```
+yarn build
+```
 
-### `pages`
+```
+yarn start
+```
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+##### Generate static project:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+```
+yarn generate
+```
 
-### `plugins`
+## Notes
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+- Always run `yarn install` after pulling new changes
+- I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo and in progress
+- Coming Soon [I'll be doing a screencast](https://www.youtube.com/c/StomanStudio). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this portoflio
+- Illustrations from [unDraw](https://undraw.co) and [Freepik](https://freepik.com)
+- Images from [Unsplash](https://unsplash.com)
+- Feel free to use it as your own portfolio
+- Contributions are welcome

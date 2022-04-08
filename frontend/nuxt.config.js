@@ -1,79 +1,86 @@
 export default {
-    head: {
-        title: 'ergodnc',
-        htmlAttrs: {
-            lang: 'en'
-        },
-        bodyAttrs: {
-            class: 'bg-gray-100'
-        },
-        meta: [
-            {charset: 'utf-8'},
-            {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-            {hid: 'description', name: 'description', content: ''},
-            {name: 'format-detection', content: 'telephone=no'}
-        ],
-        link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-            {
-                rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'
-            }
-        ]
+  // Target: https://go.nuxtjs.dev/config-target
+  target: "static",
+  colorMode: {
+    classSuffix: "",
+  },
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
+  head: {
+    title: "Институт Косметологии",
+    htmlAttrs: {
+      lang: "ru",
     },
-
-    css: [],
-
-    plugins: [],
-
-    components: true,
-
-    buildModules: [
-        '@nuxtjs/eslint-module',
-        '@nuxtjs/tailwindcss'
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
     ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+  },
 
-    modules: [
-        '@nuxtjs/axios',
-        '@nuxtjs/auth-next'
-    ],
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: ["~/assets/app.css"],
 
-    auth: {
-        strategies: {
-            cookie: {
-                endpoints: {
-                    csrf: {
-                        url: '/sanctum/csrf-cookie'
-                    },
-                    login: {
-                        url: '/login'
-                    },
-                    logout: {
-                        url: '/logout'
-                    },
-                    user: {
-                        url: '/user'
-                    }
-                },
-                user: {
-                    property: 'data'
-                },
-            }
-        },
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [
+    // "~/plugins/back-to-top.js"
+  ],
 
-        redirect: {
-            login: '/login',
-            logout: '/login',
-            home: '/'
-        },
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
 
-        plugins: ['~/plugins/axios'],
-    },
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/tailwindcss
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+  ],
 
-    axios: {
-        baseURL: 'http://localhost',
-        credentials: true,
-    },
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
 
-    build: {},
-}
+  auth: {
+      strategies: {
+          cookie: {
+              endpoints: {
+                  csrf: {
+                      url: '/sanctum/csrf-cookie'
+                  },
+                  login: {
+                      url: '/login'
+                  },
+                  logout: {
+                      url: '/logout'
+                  },
+                  user: {
+                      url: '/user'
+                  }
+              },
+              user: {
+                  property: 'data'
+              },
+          }
+      },
+
+      redirect: {
+          login: '/login',
+          logout: '/login',
+          home: '/'
+      },
+
+      plugins: ['~/plugins/axios'],
+  },
+
+  axios: {
+      baseURL: 'http://localhost',
+      credentials: true,
+  },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+};
