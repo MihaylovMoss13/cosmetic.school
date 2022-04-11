@@ -1,3 +1,5 @@
+/.idea
+
 # RestAPI
 /backend/node_modules
 /backend/public/hot

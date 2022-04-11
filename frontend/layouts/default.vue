@@ -2,16 +2,24 @@
   <div
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
-    <!-- App header -->
-    <AppHeader />
+    <div
+      v-if="$route.path.meta !== true"
+    >
+      <!-- App header -->
+      <AppHeader />
+    </div>
 
     <!-- Render contents with transition -->
     <transition name="fade" mode="out-in">
       <Nuxt />
     </transition>
 
-    <!-- App footer -->
-    <AppFooter />
+    <div
+      v-if="$route.path.meta !== true"
+    >
+      <!-- App footer -->
+      <AppFooter />
+    </div>
 
     <!-- Go back to top when scrolled down -->
     <div
@@ -39,6 +47,9 @@ import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
 export default {
+  middleware: 'auth',
+  auth: 'guest',
+
   data: () => {
     return {
       // Todo
