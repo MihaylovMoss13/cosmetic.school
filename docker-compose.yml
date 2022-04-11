@@ -61,15 +61,6 @@ services:
             - sail
         depends_on:
             - mysql
-    frontend:
-        container_name: frontend
-        build: frontend
-        # restart: always
-        ports:
-            - '4000:4000'
-        command: "npm run start"
-        networks:
-            - sail
     redis:
         container_name: redis
         image: 'redis:alpine'
