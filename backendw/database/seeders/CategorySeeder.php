@@ -16,27 +16,7 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'title' => 'Курс для косметологов',
-                'slug'  => 'kurs-dlya-cosmetology'
-            ],
-            [
-                'title' => 'Курсы маникюра и педикюра',
-                'slug'  => 'kursy-manikura-i-pedikura'
-            ],
-            [
-                'title' => 'Курсы наращивания ресниц',
-                'slug'  => 'kurs-dlya-cosmetology'
-            ],
-            [
-                'title' => 'Курс для косметологов',
-                'slug'  => 'kurs-dlya-cosmetology'
-            ],
-            [
-                'title' => 'Курс для косметологов',
-                'slug'  => 'kurs-dlya-cosmetology'
-            ],
-            [
-                'title' => 'Курс для косметологов',
+                'title' => 'Курсы косметологии',
                 'slug'  => 'kurs-dlya-cosmetology'
             ],
         ];

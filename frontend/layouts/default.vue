@@ -2,24 +2,24 @@
   <div
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
-    <div
+    <!-- <div
       v-if="$route.path.meta !== true"
-    >
+    > -->
       <!-- App header -->
       <AppHeader />
-    </div>
+    <!-- </div> -->
 
     <!-- Render contents with transition -->
     <transition name="fade" mode="out-in">
       <Nuxt />
     </transition>
 
-    <div
+    <!-- <div
       v-if="$route.path.meta !== true"
-    >
+    > -->
       <!-- App footer -->
       <AppFooter />
-    </div>
+    <!-- </div> -->
 
     <!-- Go back to top when scrolled down -->
     <div
@@ -47,8 +47,8 @@ import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
 export default {
-  middleware: 'auth',
-  auth: 'guest',
+  // middleware: 'auth',
+  // auth: 'guest',
 
   data: () => {
     return {
@@ -59,6 +59,11 @@ export default {
     feather.replace();
   },
   components: { AppFooter, BackToTop, AppHeader },
+  watch: {
+    isHome() {
+      console.log(this.$route);
+    }
+  }
 };
 </script>
 

@@ -34,7 +34,7 @@ export default {
       "
     >
       <!-- Footer social links -->
-      <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
+      <div class="flex flex-col justify-center items-center mb-12 sm:mb-20 hidden">
         <p
           class="
             font-general-semibold

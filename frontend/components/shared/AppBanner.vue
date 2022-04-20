@@ -24,79 +24,163 @@ export default {
       sm:justify-between
       items-center
       sm:flex-row
-      relative
       lg:h-screen
+      bg-overlay
+      relative
     "
+    style="margin-top: -220px; background: url(/_nuxt/static/home/slider.jpeg)"
   >
-    <div class="container mx-auto">
-      <div class="w-full lg:w-1/2 text-left relative">
-        <h1
+    <div class="container relative mx-auto">
+      <div
+        class="
+          w-full
+          text-left
+          relative
+        "
+      >
+        <div
           class="
-            font-general-semibold
-            text-3xl
-            md:text-3xl
-            xl:text-4xl
-            text-center
-            sm:text-left
-            text-ternary-dark
-            dark:text-primary-light
-            uppercase
+            pt-36
+            items-center
+            justify-evenly
+            flex
+            flex-wrap
+            w-full
           "
         >
-          Институт косметологии в Москве
-        </h1>
-        <p
-          class="
-            font-general-medium
-            mt-5
-            text-lg
-            sm:text-xl
-            text-center
-            sm:text-left
-            leading-none
-            text-gray-400
-          "
-        >
-          Предлагает своим студентам возможность получить дополнительное образование в сфере косметологии.
-        </p>
-        <div class="flex justify-center sm:block">
-          <NuxtLink
-            to="/about"
-            download=""
+          <img
+            src="~/static/cs-dark.svg"
+            alt="Cosmetic School"
             class="
-              flex
-              justify-center
-              items-center
-              w-36
-              sm:w-60
-              mt-12
+              w-72
               mb-6
-              sm:mb-0
-              text-lg
-              border border-indigo-200
-              dark:border-ternary-dark
-              py-2.5
-              sm:py-3
-              shadow-lg
-              rounded-lg
-              bg-indigo-50
-              focus:ring-1 focus:ring-indigo-900
-              hover:bg-indigo-500
-              text-gray-500
-              hover:text-white
-              duration-500
             "
-            aria-label="Узнать подробнее"
+          />
+          <div
+            class="
+              lg:w-1/2
+            "
           >
-            <span class="text-sm sm:text-lg font-general-medium duration-100"
-              >Узнать подробнее</span
+            <p
+              class="
+                font-general-regular
+                text-lg
+                sm:text-xl
+                text-center
+                sm:text-left
+                leading-none
+                text-uppercase
+                brand-color
+              "
+              style="font-size: 48px; line-height: 52px;"
             >
-          </NuxtLink>
+              Очное образование в индустрии красоты
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="hidden lg:flex text-right absolute" style="right: 0; bottom: 0">
-        <img src="~/static/home/main.png">
+        <div class="flex justify-center flex-wrap text-center w-full">
+          <p class="mt-6 mb-2 w-full">Выберите направление обучения:</p>
+          <div
+            class="flex"
+          >
+            <NuxtLink
+              to="/about"
+              class="
+                flex
+                justify-center
+                items-center
+                w-36
+                sm:w-48
+                mt-2
+                mr-4
+                mb-6
+                sm:mb-0
+                text-lg
+                border border-indigo-200
+                py-2.5
+                sm:py-3
+                shadow-lg
+                rounded-lg
+                bg-indigo-50
+                focus:ring-1 focus:ring-indigo-900
+                hover:bg-indigo-500
+                duration-500
+                text-white
+                brand-color-bg
+              "
+              aria-label="Косметология"
+            >
+              <span class="text-sm sm:text-lg font-general-medium duration-100"
+                >Косметология</span
+              >
+            </NuxtLink>
+            <NuxtLink
+              to="/about"
+              download=""
+              class="
+                flex
+                justify-center
+                items-center
+                w-36
+                sm:w-60
+                mt-2
+                mr-4
+                mb-6
+                sm:mb-0
+                text-lg
+                border border-indigo-200
+                dark:border-ternary-dark
+                py-2.5
+                sm:py-3
+                shadow-lg
+                rounded-lg
+                bg-indigo-50
+                focus:ring-1 focus:ring-indigo-900
+                hover:bg-indigo-500
+                text-white
+                brand-color-bg
+                duration-500
+              "
+              aria-label="Сестринское дело"
+            >
+              <span class="text-sm sm:text-lg font-general-medium duration-100"
+                >Сестринское дело</span
+              >
+            </NuxtLink>
+            <NuxtLink
+              to="/about"
+              download=""
+              class="
+                flex
+                justify-center
+                items-center
+                w-36
+                sm:w-60
+                mt-2
+                mb-6
+                sm:mb-0
+                text-lg
+                border border-indigo-200
+                dark:border-ternary-dark
+                py-2.5
+                sm:py-3
+                shadow-lg
+                rounded-lg
+                bg-indigo-50
+                focus:ring-1 focus:ring-indigo-900
+                hover:bg-indigo-500
+                text-white
+                brand-color-bg
+                duration-500
+              "
+              aria-label="Колористика"
+            >
+              <span class="text-sm sm:text-lg font-general-medium duration-100"
+                >Колористика</span
+              >
+            </NuxtLink>
+          </div>
+        </div>
       </div>
     </div>
   </section>

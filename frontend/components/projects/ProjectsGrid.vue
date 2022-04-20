@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <div class="pt-10 sm:pt-20 md:pt-18">
+  <div class="pt-10 sm:pt-20 md:pt-11">
     <!-- Projects grid header -->
     <div class="text-center">
       <p
@@ -54,7 +54,7 @@ export default {
           text-2xl
           sm:text-5xl
           font-semibold
-          mb-2
+          mb-4
           text-ternary-dark
           dark:text-ternary-light
         "
@@ -62,30 +62,13 @@ export default {
         {{ projectsHeading }}
       </p>
       <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
-      <!-- <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
+      <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
         {{ projectsDescription }}
-      </p> -->
-    </div>
-
-    <!-- Filter and search projects -->
-    <div class="mt-8 sm:mt-10">
-      <h3
-        class="
-          font-general-regular
-          text-center text-secondary-dark
-          dark:text-ternary-light
-          text-md
-          sm:text-xl
-          font-normal
-          mb-4
-        "
-      >
-        Выберите нужное Вам направление
-      </h3>
+      </p>
     </div>
 
     <!-- Projects grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-12 sm:gap-4">
       <div
         v-for="course in courses"
         :key="course.id"
@@ -96,12 +79,21 @@ export default {
           cursor-pointer
           mb-10
           sm:mb-0
-          bg-secondary-light
+          bg-white
           dark:bg-ternary-dark
         "
         aria-label="`${course.title}`"
       >
         <NuxtLink :to="`/kursy/${course.slug}`">
+          <div class="relative rounded-t-xl border-none" style="height: 200px; overflow: hidden; display: flex; align-items: center;">
+            <img
+              :src="course.thumb"
+              :alt="course.title"
+            />
+            <div class="badge absolute" style="left: 15px; top: 15px;">
+              {{ course.type }}
+            </div>
+          </div>
           <div class="text-left px-4 py-6">
             <span
               class="
@@ -122,16 +114,43 @@ export default {
             >
               {{ course.title }}
             </p>
-            <div class="badge">
-              {{ course.course_type }}
+
+            <hr/>
+            <p
+              class="
+                pt-3
+                pb-2
+                brand-color
+              "
+            >
+              <span
+                class="
+                  text-sm
+                  font-general-semibold
+                "
+              >Продолжительность:</span> {{ course.duration }}
+            </p>
+
+            <hr/>
+            <div
+              class="
+                pt-4
+                flex
+                items-center
+              "
+            >
+              <span
+                class="
+                  mr-4
+                  text-sm
+                  font-general-semibold
+                "
+              >Цена:</span>
+              <div class="flex flex-wrap">
+                <p class="w-full text-xs mb-0"><strike>{{ course.old_price }} ₽</strike></p>
+                <p class="color-red w-full pt-0" style="line-height: 14px;">{{ course.price }} ₽</p>
+              </div>
             </div>
-          </div>
-          <div>
-            <img
-              :src="course.img"
-              :alt="course.title"
-              class="rounded-t-xl border-none"
-            />
           </div>
         </NuxtLink>
       </div>

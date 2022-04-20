@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 
 export const state = () => ({
-  projectsHeading: "Все направления обучения",
-  projectsDescription: "Some of the projects I have successfully completed",
+  projectsHeading: "Список курсов обучения",
+  projectsDescription: "Выберите нужное Вам направление",
   projects: [
     {
       id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdb",

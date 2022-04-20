@@ -19,10 +19,6 @@ export default {
         max-w-xl
         m-4
         p-7
-        bg-secondary-light
-        dark:bg-secondary-dark
-        rounded-xl
-        shadow-xl
         text-left
       "
     >

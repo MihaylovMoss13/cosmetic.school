@@ -72,6 +72,10 @@
   font-style: normal;
 }
 
+body {
+  font-family: "Montserrat-Medium";
+}
+
 .font-general-regular {
   font-family: "Montserrat-Regular";
 }
@@ -174,10 +178,74 @@
   font-family: "Montserrat-BoldItalic";
 }
 
+ul {
+  margin-left: 32px;
+  margin-top: 12px;
+}
+
+ul li {
+  list-style: disc;
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.8rem;
+  text-justify: auto;
+}
+
 .badge {
   background-color: #4340B4;
   border-radius: 9px;
   padding: 8px 28px 8px 33px;
   display: inline-flex;
   color: #fff;
+}
+
+.bg-overlay {
+  position: relative;
+}
+
+.bg-overlay:after {
+  content: '';
+  position: absolute;
+  background-color: #d7d7d7;
+  opacity: .8;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.bg-secondary-light {
+  background: linear-gradient(45deg, #c9d1d4, #cdd2d6);
+}
+
+#nav .nuxt-link-exact-active, #nav .nuxt-link-active {
+  color: rgb(25, 49, 107) !important;
+}
+
+.brand-color {
+  color: rgb(25, 49, 107);
+}
+
+.color-red {
+  color: red;
+}
+
+.brand-color-bg {
+  background-color: rgb(25, 49, 107);
 }

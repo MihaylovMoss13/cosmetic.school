@@ -12,18 +12,18 @@ export default {
 <template>
   <!-- Contact details -->
   <div class="w-full md:w-1/2">
-    <div class="text-left max-w-xl px-6">
-      <h2
+    <div class="text-center max-w-xl px-6">
+      <h1
         class="
           font-general-medium
           text-2xl text-primary-dark
           dark:text-primary-light
-          mt-8
+          mt-11
           mb-8
         "
       >
         Контактная информация
-      </h2>
+      </h1>
       <ul class="font-general-regular">
         <li class="flex" v-for="contact in contacts" :key="contact.id">
           <i

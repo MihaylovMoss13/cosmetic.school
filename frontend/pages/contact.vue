@@ -24,6 +24,11 @@ export default {
       ],
     };
   },
+  head() {
+    return {
+      title: 'Контакты'
+    }
+  },
   mounted() {
     feather.replace();
   },
@@ -35,17 +40,12 @@ export default {
 
 <template>
   <div
-    class="
-      container
-      mx-auto
-      flex flex-col-reverse
-      md:flex-row md:py-10 md:mt-20
-    "
+    class="container mx-auto"
   >
-    <!-- Contact form -->
-    <ContactForm />
+    <div class="w-full flex flex-col-reverse md:flex-row">
+      <ContactDetails :contacts="contacts" />
 
-    <!-- Contact details -->
-    <ContactDetails :contacts="contacts" />
+      <ContactForm />
+    </div>
   </div>
 </template>

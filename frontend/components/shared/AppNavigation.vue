@@ -66,8 +66,6 @@ export default {
         border-t-2
         pt-3
         sm:pt-2 sm:border-t-0
-        border-primary-light
-        dark:border-secondary-dark
       "
       aria-label="Акции"
       >Акции</NuxtLink
@@ -86,8 +84,6 @@ export default {
         border-t-2
         pt-3
         sm:pt-2 sm:border-t-0
-        border-primary-light
-        dark:border-secondary-dark
       "
       aria-label="Блог"
       >Блог</NuxtLink
@@ -106,8 +102,6 @@ export default {
         border-t-2
         pt-3
         sm:pt-2 sm:border-t-0
-        border-primary-light
-        dark:border-secondary-dark
       "
       aria-label="О нас"
       >О нас</NuxtLink
@@ -126,8 +120,6 @@ export default {
         border-t-2
         pt-3
         sm:pt-2 sm:border-t-0
-        border-primary-light
-        dark:border-secondary-dark
       "
       aria-label="Контакты"
       >Контакты</NuxtLink
@@ -138,7 +130,7 @@ export default {
         border-t-2
         pt-3
         sm:pt-0 sm:border-t-0
-        border-primary-light
+        border-primary-white
         dark:border-secondary-dark
       "
     >
